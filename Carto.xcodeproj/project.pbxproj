@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D9EB9A7B2FEFD04E005CE9A4 /* CartoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A7A2FEFD04E005CE9A4 /* CartoApp.swift */; };
+		D9EB9A7D2FEFD04E005CE9A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A7C2FEFD04E005CE9A4 /* ContentView.swift */; };
+		D9EB9A7F2FEFD058005CE9A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EB9A7E2FEFD058005CE9A4 /* Assets.xcassets */; };
+		D9EB9A822FEFD058005CE9A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9EB9A812FEFD058005CE9A4 /* Preview Assets.xcassets */; };
+		D9EB9A842FEFD058005CE9A4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A832FEFD058005CE9A4 /* Persistence.swift */; };
+		D9EB9A872FEFD058005CE9A4 /* Carto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A852FEFD058005CE9A4 /* Carto.xcdatamodeld */; };
+		D9EB9A912FEFD058005CE9A4 /* CartoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A902FEFD058005CE9A4 /* CartoTests.swift */; };
+		D9EB9A9B2FEFD058005CE9A4 /* CartoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A9A2FEFD058005CE9A4 /* CartoUITests.swift */; };
+		D9EB9A9D2FEFD058005CE9A4 /* CartoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EB9A9C2FEFD058005CE9A4 /* CartoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D9EB9A8D2FEFD058005CE9A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9EB9A6F2FEFD04D005CE9A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9EB9A762FEFD04D005CE9A4;
+			remoteInfo = Carto;
+		};
+		D9EB9A972FEFD058005CE9A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9EB9A6F2FEFD04D005CE9A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9EB9A762FEFD04D005CE9A4;
+			remoteInfo = Carto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D9EB9A772FEFD04D005CE9A4 /* Carto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9EB9A7A2FEFD04E005CE9A4 /* CartoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoApp.swift; sourceTree = "<group>"; };
+		D9EB9A7C2FEFD04E005CE9A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D9EB9A7E2FEFD058005CE9A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D9EB9A812FEFD058005CE9A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9EB9A832FEFD058005CE9A4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		D9EB9A862FEFD058005CE9A4 /* Carto.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Carto.xcdatamodel; sourceTree = "<group>"; };
+		D9EB9A8C2FEFD058005CE9A4 /* CartoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9EB9A902FEFD058005CE9A4 /* CartoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoTests.swift; sourceTree = "<group>"; };
+		D9EB9A962FEFD058005CE9A4 /* CartoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CartoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9EB9A9A2FEFD058005CE9A4 /* CartoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoUITests.swift; sourceTree = "<group>"; };
+		D9EB9A9C2FEFD058005CE9A4 /* CartoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D9EB9A742FEFD04D005CE9A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EB9A892FEFD058005CE9A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EB9A932FEFD058005CE9A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D9EB9A6E2FEFD04D005CE9A4 = {
+			isa = PBXGroup;
+			children = (
+				D9EB9A792FEFD04D005CE9A4 /* Carto */,
+				D9EB9A8F2FEFD058005CE9A4 /* CartoTests */,
+				D9EB9A992FEFD058005CE9A4 /* CartoUITests */,
+				D9EB9A782FEFD04D005CE9A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D9EB9A782FEFD04D005CE9A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9EB9A772FEFD04D005CE9A4 /* Carto.app */,
+				D9EB9A8C2FEFD058005CE9A4 /* CartoTests.xctest */,
+				D9EB9A962FEFD058005CE9A4 /* CartoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D9EB9A792FEFD04D005CE9A4 /* Carto */ = {
+			isa = PBXGroup;
+			children = (
+				D9EB9A7A2FEFD04E005CE9A4 /* CartoApp.swift */,
+				D9EB9A7C2FEFD04E005CE9A4 /* ContentView.swift */,
+				D9EB9A7E2FEFD058005CE9A4 /* Assets.xcassets */,
+				D9EB9A832FEFD058005CE9A4 /* Persistence.swift */,
+				D9EB9A852FEFD058005CE9A4 /* Carto.xcdatamodeld */,
+				D9EB9A802FEFD058005CE9A4 /* Preview Content */,
+			);
+			path = Carto;
+			sourceTree = "<group>";
+		};
+		D9EB9A802FEFD058005CE9A4 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D9EB9A812FEFD058005CE9A4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9EB9A8F2FEFD058005CE9A4 /* CartoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9EB9A902FEFD058005CE9A4 /* CartoTests.swift */,
+			);
+			path = CartoTests;
+			sourceTree = "<group>";
+		};
+		D9EB9A992FEFD058005CE9A4 /* CartoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D9EB9A9A2FEFD058005CE9A4 /* CartoUITests.swift */,
+				D9EB9A9C2FEFD058005CE9A4 /* CartoUITestsLaunchTests.swift */,
+			);
+			path = CartoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D9EB9A762FEFD04D005CE9A4 /* Carto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9EB9AA02FEFD058005CE9A4 /* Build configuration list for PBXNativeTarget "Carto" */;
+			buildPhases = (
+				D9EB9A732FEFD04D005CE9A4 /* Sources */,
+				D9EB9A742FEFD04D005CE9A4 /* Frameworks */,
+				D9EB9A752FEFD04D005CE9A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Carto;
+			productName = Carto;
+			productReference = D9EB9A772FEFD04D005CE9A4 /* Carto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D9EB9A8B2FEFD058005CE9A4 /* CartoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9EB9AA32FEFD058005CE9A4 /* Build configuration list for PBXNativeTarget "CartoTests" */;
+			buildPhases = (
+				D9EB9A882FEFD058005CE9A4 /* Sources */,
+				D9EB9A892FEFD058005CE9A4 /* Frameworks */,
+				D9EB9A8A2FEFD058005CE9A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9EB9A8E2FEFD058005CE9A4 /* PBXTargetDependency */,
+			);
+			name = CartoTests;
+			productName = CartoTests;
+			productReference = D9EB9A8C2FEFD058005CE9A4 /* CartoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D9EB9A952FEFD058005CE9A4 /* CartoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9EB9AA62FEFD058005CE9A4 /* Build configuration list for PBXNativeTarget "CartoUITests" */;
+			buildPhases = (
+				D9EB9A922FEFD058005CE9A4 /* Sources */,
+				D9EB9A932FEFD058005CE9A4 /* Frameworks */,
+				D9EB9A942FEFD058005CE9A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D9EB9A982FEFD058005CE9A4 /* PBXTargetDependency */,
+			);
+			name = CartoUITests;
+			productName = CartoUITests;
+			productReference = D9EB9A962FEFD058005CE9A4 /* CartoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D9EB9A6F2FEFD04D005CE9A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					D9EB9A762FEFD04D005CE9A4 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					D9EB9A8B2FEFD058005CE9A4 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = D9EB9A762FEFD04D005CE9A4;
+					};
+					D9EB9A952FEFD058005CE9A4 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = D9EB9A762FEFD04D005CE9A4;
+					};
+				};
+			};
+			buildConfigurationList = D9EB9A722FEFD04D005CE9A4 /* Build configuration list for PBXProject "Carto" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D9EB9A6E2FEFD04D005CE9A4;
+			productRefGroup = D9EB9A782FEFD04D005CE9A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D9EB9A762FEFD04D005CE9A4 /* Carto */,
+				D9EB9A8B2FEFD058005CE9A4 /* CartoTests */,
+				D9EB9A952FEFD058005CE9A4 /* CartoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D9EB9A752FEFD04D005CE9A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9EB9A822FEFD058005CE9A4 /* Preview Assets.xcassets in Resources */,
+				D9EB9A7F2FEFD058005CE9A4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EB9A8A2FEFD058005CE9A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EB9A942FEFD058005CE9A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D9EB9A732FEFD04D005CE9A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9EB9A842FEFD058005CE9A4 /* Persistence.swift in Sources */,
+				D9EB9A7D2FEFD04E005CE9A4 /* ContentView.swift in Sources */,
+				D9EB9A7B2FEFD04E005CE9A4 /* CartoApp.swift in Sources */,
+				D9EB9A872FEFD058005CE9A4 /* Carto.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EB9A882FEFD058005CE9A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9EB9A912FEFD058005CE9A4 /* CartoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9EB9A922FEFD058005CE9A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9EB9A9D2FEFD058005CE9A4 /* CartoUITestsLaunchTests.swift in Sources */,
+				D9EB9A9B2FEFD058005CE9A4 /* CartoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D9EB9A8E2FEFD058005CE9A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9EB9A762FEFD04D005CE9A4 /* Carto */;
+			targetProxy = D9EB9A8D2FEFD058005CE9A4 /* PBXContainerItemProxy */;
+		};
+		D9EB9A982FEFD058005CE9A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9EB9A762FEFD04D005CE9A4 /* Carto */;
+			targetProxy = D9EB9A972FEFD058005CE9A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D9EB9A9E2FEFD058005CE9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D9EB9A9F2FEFD058005CE9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D9EB9AA12FEFD058005CE9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Carto/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Wizards.Carto";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9EB9AA22FEFD058005CE9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Carto/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Wizards.Carto";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D9EB9AA42FEFD058005CE9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Wizards.CartoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Carto";
+			};
+			name = Debug;
+		};
+		D9EB9AA52FEFD058005CE9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Wizards.CartoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carto.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Carto";
+			};
+			name = Release;
+		};
+		D9EB9AA72FEFD058005CE9A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Wizards.CartoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Carto;
+			};
+			name = Debug;
+		};
+		D9EB9AA82FEFD058005CE9A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iOS-Wizards.CartoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Carto;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D9EB9A722FEFD04D005CE9A4 /* Build configuration list for PBXProject "Carto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9EB9A9E2FEFD058005CE9A4 /* Debug */,
+				D9EB9A9F2FEFD058005CE9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9EB9AA02FEFD058005CE9A4 /* Build configuration list for PBXNativeTarget "Carto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9EB9AA12FEFD058005CE9A4 /* Debug */,
+				D9EB9AA22FEFD058005CE9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9EB9AA32FEFD058005CE9A4 /* Build configuration list for PBXNativeTarget "CartoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9EB9AA42FEFD058005CE9A4 /* Debug */,
+				D9EB9AA52FEFD058005CE9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9EB9AA62FEFD058005CE9A4 /* Build configuration list for PBXNativeTarget "CartoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9EB9AA72FEFD058005CE9A4 /* Debug */,
+				D9EB9AA82FEFD058005CE9A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D9EB9A852FEFD058005CE9A4 /* Carto.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D9EB9A862FEFD058005CE9A4 /* Carto.xcdatamodel */,
+			);
+			currentVersion = D9EB9A862FEFD058005CE9A4 /* Carto.xcdatamodel */;
+			path = Carto.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D9EB9A6F2FEFD04D005CE9A4 /* Project object */;
+}
