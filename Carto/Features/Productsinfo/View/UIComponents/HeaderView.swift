@@ -25,6 +25,7 @@ struct HeaderView: View {
             Spacer()
             
             Text("Air Max 200 SE")
+                .bold()
             
             Spacer()
             

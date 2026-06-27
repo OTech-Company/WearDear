@@ -9,31 +9,54 @@ import SwiftUI
 
 struct ProductsDetailsView: View {
     var body: some View {
-        VStack{
+        VStack {
+
             HeaderView()
-            HStack{
-                ZStack{
+
+            HStack(alignment: .top) {
+                SizeView()
+                ZStack {
                     Image("nike")
                         .resizable()
                         .scaledToFit()
-                    
+
                     Image("shoes")
                         .resizable()
                         .scaledToFit()
+                        .frame(width: 220)
                 }
-                
-                ColorView()
+
+                VStack(spacing: 24) {
+                    Image("save")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+
+                    ColorView()
+                }
             }
-            VStack(alignment: .leading){
-                Text("$30.99")
-                    .bold()
-                Text("%10 OFF")
-                    .foregroundColor(.red)
+
+            HStack {
+                Spacer()
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("$30.99")
+                        .font(.title2)
+                        .bold()
+
+                    Text("10% OFF")
+                        .foregroundColor(.red)
+                }
             }
-            
-        }.padding(8)
-        
+
+            Spacer()
+
+            Image("bag")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 260)
+                .ignoresSafeArea(edges: .bottom)
+        }
+        .padding(.horizontal)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
-

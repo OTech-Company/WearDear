@@ -17,7 +17,6 @@ struct ColorView: View {
                 Circle()
                     .fill(.red)
                     .frame(width: 25,height: 25)
-
                 Circle()
                     .fill(.blue)
                     .frame(width: 25,height: 25)
