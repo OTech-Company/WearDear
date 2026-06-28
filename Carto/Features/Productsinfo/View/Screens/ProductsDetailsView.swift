@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct ProductsDetailsView: View {
+    @State private var quantity = 1
+
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
 
             HeaderView()
+                .padding(.horizontal)
 
             HStack(alignment: .top) {
                 SizeView()
+
                 ZStack {
                     Image("nike")
                         .resizable()
@@ -27,36 +31,27 @@ struct ProductsDetailsView: View {
                 }
 
                 VStack(spacing: 24) {
-                    Image("save")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 20, height: 20)
+                    Button {} label: {
+                        Image(systemName: "bookmark")
+                            .foregroundColor(.black)
+                            .frame(width: 44, height: 44)
+                            .background(Color.white)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 12)
+                                    .stroke(Color.gray.opacity(0.3), lineWidth: 1)
+                            }
+                    }
 
                     ColorView()
                 }
             }
-
-            HStack {
-                Spacer()
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("$30.99")
-                        .font(.title2)
-                        .bold()
-
-                    Text("10% OFF")
-                        .foregroundColor(.red)
-                }
-            }
+            .padding(.horizontal)
+            .padding(.top, 20)
 
             Spacer()
 
-            Image("bag")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 260)
-                .ignoresSafeArea(edges: .bottom)
+            SwipeToAddView(quantity: $quantity)
         }
-        .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

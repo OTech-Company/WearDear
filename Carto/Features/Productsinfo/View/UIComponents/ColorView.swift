@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct ColorView: View {
-
     var body: some View {
-        VStack {
+        VStack(spacing: 32) {
             Text("Color")
                 .bold()
-            VStack{
-                Circle()
-                    .fill(.red)
-                    .frame(width: 25,height: 25)
-                Circle()
-                    .fill(.blue)
-                    .frame(width: 25,height: 25)
 
-            }
+            Circle()
+                .fill(.red)
+                .frame(width: 28, height: 28)
+                .overlay {
+                    Circle()
+                        .stroke(Color.black, lineWidth: 2)
+                }
 
+            Circle()
+                .fill(Color(red: 0.2, green: 0.2, blue: 0.5))
+                .frame(width: 28, height: 28)
         }
-
     }
-
 }
-
-

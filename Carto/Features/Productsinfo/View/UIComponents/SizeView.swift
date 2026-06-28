@@ -9,19 +9,27 @@ import SwiftUI
 
 struct SizeView: View {
     let sizes = ["UK 6", "UK 7", "UK 8", "UK 9"]
+
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("Size")
+                .bold()
+
             ForEach(sizes, id: \.self) { size in
                 Text(size)
-                    .frame(width: 60, height: 45)
+                    .font(.caption)
+                    .frame(width: 60, height: 40)
                     .background(.white)
+                    .foregroundColor(.black)
                     .overlay {
                         RoundedRectangle(cornerRadius: 12)
-                            .stroke(.gray.opacity(0.3), lineWidth: 1)
+                            .stroke(
+                                size == "UK 7" ? Color.black : Color.gray.opacity(0.3),
+                                lineWidth: 1
+                            )
                     }
+                    .cornerRadius(12)
             }
         }
     }
 }
-
