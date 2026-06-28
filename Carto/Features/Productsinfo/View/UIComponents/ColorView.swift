@@ -8,22 +8,31 @@
 import SwiftUI
 
 struct ColorView: View {
+    let colors: [Color] = [.red, Color(red: 0.2, green: 0.2, blue: 0.5)]
+    @Binding var selectedColorIndex: Int
+
     var body: some View {
-        VStack(spacing: 32) {
+        VStack(spacing: 16) {
             Text("Color")
                 .bold()
 
-            Circle()
-                .fill(.red)
-                .frame(width: 28, height: 28)
-                .overlay {
+            ForEach(colors.indices, id: \.self) { index in
+                Button {
+                    selectedColorIndex = index
+                } label: {
                     Circle()
-                        .stroke(Color.black, lineWidth: 2)
+                        .fill(colors[index])
+                        .frame(width: 28, height: 28)
+                        .overlay {
+                            Circle()
+                                .stroke(
+                                    selectedColorIndex == index ? Color.black : Color.clear,
+                                    lineWidth: 2.5
+                                )
+                                .padding(-4)
+                        }
                 }
-
-            Circle()
-                .fill(Color(red: 0.2, green: 0.2, blue: 0.5))
-                .frame(width: 28, height: 28)
+            }
         }
     }
 }

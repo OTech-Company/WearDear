@@ -12,7 +12,7 @@ struct CartoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ProductsDetailsView()
+            ProductsInfoView()
         }
     }
 }

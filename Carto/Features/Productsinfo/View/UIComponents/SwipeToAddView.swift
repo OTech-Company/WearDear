@@ -5,17 +5,15 @@
 //  Created by Manona on 27/06/2026.
 //
 
-
 import SwiftUI
 
 struct SwipeToAddView: View {
     @Binding var quantity: Int
     @State private var dragOffset: CGFloat = 0
-    private let threshold: CGFloat = 80
+    private let threshold: CGFloat = 60
 
     var body: some View {
         VStack(spacing: 0) {
-
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("$30.99")
@@ -30,7 +28,9 @@ struct SwipeToAddView: View {
                 Spacer()
 
                 HStack(spacing: 16) {
-                    Button {} label: {
+                    Button {
+                        if quantity > 0 { quantity -= 1 }
+                    } label: {
                         Text("−")
                             .font(.title3)
                             .foregroundColor(.black)
@@ -43,7 +43,9 @@ struct SwipeToAddView: View {
                         .font(.headline)
                         .frame(minWidth: 20)
 
-                    Button {} label: {
+                    Button {
+                        quantity += 1
+                    } label: {
                         Text("+")
                             .font(.title3)
                             .foregroundColor(.black)
@@ -54,31 +56,41 @@ struct SwipeToAddView: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 16)
+            .padding(.bottom, 12)
 
             Text("Swipe down to add")
                 .font(.subheadline)
                 .bold()
                 .foregroundColor(.secondary)
-                .padding(.bottom, 12)
+                .padding(.bottom, 8)
 
             ZStack(alignment: .top) {
-
                 VStack(spacing: 2) {
-                    Spacer().frame(height: 20)
-                    Image(systemName: "chevron.down")
-                        .font(.title2)
-                        .fontWeight(.semibold)
+                    Image(systemName: "chevron.up")
+                        .font(.title2).fontWeight(.semibold)
                         .foregroundColor(.black)
-                    Image(systemName: "chevron.down")
-                        .font(.title2)
-                        .fontWeight(.semibold)
+                    Image(systemName: "chevron.up")
+                        .font(.title2).fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.4))
-                    Image(systemName: "chevron.down")
-                        .font(.title2)
-                        .fontWeight(.semibold)
+                    Image(systemName: "chevron.up")
+                        .font(.title2).fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.15))
                 }
+                .offset(y: -52)
+
+                VStack(spacing: 2) {
+                    Image(systemName: "chevron.down")
+                        .font(.title2).fontWeight(.semibold)
+                        .foregroundColor(.black.opacity(0.15))
+                    Image(systemName: "chevron.down")
+                        .font(.title2).fontWeight(.semibold)
+                        .foregroundColor(.black.opacity(0.4))
+                    Image(systemName: "chevron.down")
+                        .font(.title2).fontWeight(.semibold)
+                        .foregroundColor(.black)
+                }
+                .offset(y: 52)
+
                 Circle()
                     .fill(Color.black)
                     .frame(width: 56, height: 56)
@@ -88,18 +100,18 @@ struct SwipeToAddView: View {
                             .font(.title3)
                     }
                     .offset(y: dragOffset)
-                    .opacity(1 - Double(dragOffset / threshold) * 0.8)
                     .gesture(
                         DragGesture()
                             .onChanged { value in
-                                if value.translation.height > 0 {
-                                    dragOffset = min(value.translation.height, threshold + 10)
-                                }
+                                dragOffset = max(-threshold - 10, min(value.translation.height, threshold + 10))
                             }
                             .onEnded { value in
+                                let impact = UIImpactFeedbackGenerator(style: .medium)
                                 if value.translation.height >= threshold {
                                     quantity += 1
-                                    let impact = UIImpactFeedbackGenerator(style: .medium)
+                                    impact.impactOccurred()
+                                } else if value.translation.height <= -threshold {
+                                    if quantity > 0 { quantity -= 1 }
                                     impact.impactOccurred()
                                 }
                                 withAnimation(.spring()) {
@@ -109,13 +121,13 @@ struct SwipeToAddView: View {
                     )
                     .animation(.interactiveSpring(), value: dragOffset)
             }
-            .padding(.bottom, 8)
+            .frame(height: 150)
 
             Image("bag")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 260)
-                .ignoresSafeArea(edges: .bottom)
+                .frame(maxWidth: .infinity)
+                .padding(.top, -28)
         }
     }
 }

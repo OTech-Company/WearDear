@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D79C8232FF01262001CEC19 /* ProductsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79C8222FF01262001CEC19 /* ProductsDetailsView.swift */; };
+		6D79C8232FF01262001CEC19 /* ProductsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79C8222FF01262001CEC19 /* ProductsInfoView.swift */; };
 		6D79C8252FF01953001CEC19 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79C8242FF01953001CEC19 /* HeaderView.swift */; };
 		6D79C8292FF02589001CEC19 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79C8282FF02589001CEC19 /* ColorView.swift */; };
 		6D79C82B2FF02976001CEC19 /* SizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D79C82A2FF02976001CEC19 /* SizeView.swift */; };
@@ -224,7 +224,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D79C8222FF01262001CEC19 /* ProductsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDetailsView.swift; sourceTree = "<group>"; };
+		6D79C8222FF01262001CEC19 /* ProductsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInfoView.swift; sourceTree = "<group>"; };
 		6D79C8242FF01953001CEC19 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6D79C8282FF02589001CEC19 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		6D79C82A2FF02976001CEC19 /* SizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeView.swift; sourceTree = "<group>"; };
@@ -999,7 +999,7 @@
 		6FB175AB2FEFE3140008DDDC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				6D79C8222FF01262001CEC19 /* ProductsDetailsView.swift */,
+				6D79C8222FF01262001CEC19 /* ProductsInfoView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1665,7 +1665,7 @@
 				6FB176872FEFE3140008DDDC /* PaymentConfirmationViewModel.swift in Sources */,
 				6FB176892FEFE3140008DDDC /* CouponEntity.swift in Sources */,
 				6FB1768A2FEFE3140008DDDC /* LanguageEntity.swift in Sources */,
-				6D79C8232FF01262001CEC19 /* ProductsDetailsView.swift in Sources */,
+				6D79C8232FF01262001CEC19 /* ProductsInfoView.swift in Sources */,
 				6FB1768B2FEFE3140008DDDC /* AdsPlacementViewModel.swift in Sources */,
 				6FB1768C2FEFE3140008DDDC /* CategoryDTO.swift in Sources */,
 				6FB1768D2FEFE3140008DDDC /* OrderListView.swift in Sources */,

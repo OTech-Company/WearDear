@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct ProductsDetailsView: View {
-    @State private var quantity = 1
+struct ProductsInfoView: View {
+    @State private var quantity = 0
+    @State private var selectedSize = "UK 7"
+    @State private var selectedColorIndex = 0
 
     var body: some View {
         VStack(spacing: 0) {
@@ -17,7 +19,7 @@ struct ProductsDetailsView: View {
                 .padding(.horizontal)
 
             HStack(alignment: .top) {
-                SizeView()
+                SizeView(selectedSize: $selectedSize)
 
                 ZStack {
                     Image("nike")
@@ -31,6 +33,8 @@ struct ProductsDetailsView: View {
                 }
 
                 VStack(spacing: 24) {
+                    Spacer().frame(height: 20)
+
                     Button {} label: {
                         Image(systemName: "bookmark")
                             .foregroundColor(.black)
@@ -42,16 +46,17 @@ struct ProductsDetailsView: View {
                             }
                     }
 
-                    ColorView()
+                    ColorView(selectedColorIndex: $selectedColorIndex)
                 }
             }
             .padding(.horizontal)
-            .padding(.top, 20)
+            .padding(.top, 8)
 
-            Spacer()
+            Spacer(minLength: 0)
 
             SwipeToAddView(quantity: $quantity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
