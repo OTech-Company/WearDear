@@ -1,5 +1,5 @@
 struct ProductEntity {
-    let id: String
+    let id: Int
     let title: String
     let description: String
     let brand: String

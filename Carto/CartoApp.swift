@@ -16,7 +16,7 @@ struct CartoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ProductsInfoView(productId: "8357262393388")
+            ProductsInfoView(product: .mock)
         }
     }
 }

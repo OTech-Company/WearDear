@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import SwiftUI
 
 struct SwipeToAddView: View {
     let price: Double
-    let discount: String
+    let compareAtPrice: Double?
+    let discountPercentage: Int?
 
     @Binding var quantity: Int
     @State private var dragOffset: CGFloat = 0
@@ -21,14 +21,25 @@ struct SwipeToAddView: View {
         VStack(spacing: 0) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(String(format: "$%.2f", price))
-                        .font(.title2)
-                        .bold()
+                    HStack(spacing: 8) {
+                        Text(String(format: "$%.2f", price))
+                            .font(.title2)
+                            .bold()
 
-                    Text(discount)
-                        .foregroundColor(.red)
-                        .font(.caption)
-                        .bold()
+                        if let compareAtPrice = compareAtPrice, compareAtPrice > price {
+                            Text(String(format: "$%.2f", compareAtPrice))
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                                .strikethrough()
+                        }
+                    }
+
+                    if let discountPercentage = discountPercentage {
+                        Text("-\(discountPercentage)% OFF")
+                            .foregroundColor(.red)
+                            .font(.caption)
+                            .bold()
+                    }
                 }
 
                 Spacer()

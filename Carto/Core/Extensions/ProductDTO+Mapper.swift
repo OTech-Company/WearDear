@@ -11,7 +11,7 @@ extension ProductDTO {
             id: id ?? 0,
             title: title ?? "",
             price: Double(variants?.first?.price ?? "0") ?? 0,
-            discount: "",
+            compareAtPrice: variants?.first?.compareAtPrice.flatMap { Double($0) },
             imageURL: images?.first?.src ?? "",
             sizes: options?
                 .first(where: { $0.name.lowercased() == "size" })?
