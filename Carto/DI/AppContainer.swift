@@ -10,7 +10,7 @@ final class AppContainer {
 
 //    // MARK: - Repositories — one per feature
 //    let authRepository: AuthRepository
-//    let productRepository: ProductRepository
+    let productsRepository: ProductsRepository
 //    let brandRepository: BrandRepository
 //    let categoryRepository: CategoryRepository
     let categoryRepository: CategoryRepositoryProtocol
@@ -27,9 +27,11 @@ final class AppContainer {
 //        self.storageManager = StorageManager.shared
 
         self.categoryRepository = CategoryRepository()
+        
+        let productsRemoteDataSource = ProductsRemoteDataSourceImpl(apiClient: apiClient)
+                self.productsRepository = ProductsRepositoryImpl(remoteDataSource: productsRemoteDataSource)
 //        // 2. Repositories — inject apiClient + storageManager into each
 //        self.authRepository     = AuthRepository(apiClient: apiClient)
-//        self.productRepository  = ProductRepository(apiClient: apiClient)
 //        self.brandRepository    = BrandRepository(apiClient: apiClient)
 //        self.categoryRepository = CategoryRepository(apiClient: apiClient)
 //        self.cartRepository     = CartRepository(apiClient: apiClient, storage: storageManager)
