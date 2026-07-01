@@ -37,7 +37,6 @@ struct SwipeToAddView: View {
                     if let discountPercentage = discountPercentage {
                         Text("-\(discountPercentage)% OFF")
                             .foregroundColor(.red)
-                            .font(.caption)
                             .bold()
                     }
                 }

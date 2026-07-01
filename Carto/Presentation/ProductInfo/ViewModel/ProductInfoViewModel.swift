@@ -6,31 +6,36 @@
 //
 
 import Foundation
-import Combine
 
 @MainActor
 final class ProductsInfoViewModel: ObservableObject {
 
-    @Published private(set) var product: ProductInfo?
-    @Published private(set) var isLoading = false
-    @Published var errorMessage: String?
+    let product: ProductInfo
 
-    private let useCase: ProductsInfoUseCase
+    @Published var quantity: Int = 0
+    @Published var selectedSize: String = ""
+    @Published var selectedColorIndex: Int = 0
+    @Published private(set) var isFavorite: Bool = false
 
-    init(useCase: ProductsInfoUseCase) {
-        self.useCase = useCase
+    init(product: ProductInfo) {
+        self.product = product
+        self.selectedSize = product.sizes.first ?? ""
     }
 
-    func fetchProduct(productId: Int) async {
-        isLoading = true
-        errorMessage = nil
+    func incrementQuantity() {
+        quantity += 1
+    }
 
-        do {
-            product = try await useCase.execute(productId: productId)
-            isLoading = false
-        } catch {
-            isLoading = false
-            errorMessage = error.localizedDescription
+    func decrementQuantity() {
+        if quantity > 0 {
+            quantity -= 1
         }
+    }
+
+    func toggleFavorite() {
+        isFavorite.toggle()
+    }
+
+    func addToCart() {
     }
 }
