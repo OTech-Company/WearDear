@@ -11,8 +11,8 @@ import Combine
 @MainActor
 class ProductsInfoViewModel: ObservableObject {
 
-    @Published private var product: ProductInfo?
-    @Published private var isLoading = false
+    @Published private(set) var product: ProductInfo?
+    @Published private(set) var isLoading = false
     @Published var errorMessage: String?
 
     private let useCase: ProductsInfoUseCase
@@ -21,15 +21,20 @@ class ProductsInfoViewModel: ObservableObject {
         self.useCase = useCase
     }
 
+    static func make(productId: String) -> ProductsInfoViewModel {
+        let repository = ServiceLocator.shared.resolveProductsRepository()
+        let useCase = ProductsInfoUseCase(repository: repository)
+        return ProductsInfoViewModel(useCase: useCase)
+    }
+
     func fetchProduct(productId: String) async {
         isLoading = true
-
+        errorMessage = nil
         do {
             product = try await useCase.execute(productId: productId)
-            isLoading = false
         } catch {
-            isLoading = false
             errorMessage = error.localizedDescription
         }
+        isLoading = false
     }
 }
