@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct SizeView: View {
-    let sizes = ["UK 6", "UK 7", "UK 8", "UK 9"]
+    let sizes: [String]
     @Binding var selectedSize: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Size")
                 .bold()
-
             ForEach(sizes, id: \.self) { size in
                 Button {
                     selectedSize = size
