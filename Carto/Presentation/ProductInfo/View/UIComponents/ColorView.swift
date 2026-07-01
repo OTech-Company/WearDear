@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ColorView: View {
-    let colors: [Color] = [.red, Color(red: 0.2, green: 0.2, blue: 0.5)]
+    let colorNames: [String]
     @Binding var selectedColorIndex: Int
 
     var body: some View {
         VStack(spacing: 16) {
             Text("Color")
                 .bold()
-
-            ForEach(colors.indices, id: \.self) { index in
+            ForEach(colorNames.indices, id: \.self) { index in
                 Button {
                     selectedColorIndex = index
                 } label: {
                     Circle()
-                        .fill(colors[index])
+                        .fill(colorFromName(colorNames[index]))
                         .frame(width: 28, height: 28)
                         .overlay {
                             Circle()
@@ -33,6 +32,23 @@ struct ColorView: View {
                         }
                 }
             }
+        }
+    }
+
+    private func colorFromName(_ name: String) -> Color {
+        switch name.lowercased() {
+        case "black": return .black
+        case "white": return .white
+        case "red": return .red
+        case "blue": return Color(red: 0.2, green: 0.2, blue: 0.5)
+        case "green": return .green
+        case "yellow": return .yellow
+        case "pink": return .pink
+        case "orange": return .orange
+        case "purple": return .purple
+        case "gray", "grey": return .gray
+        case "brown": return .brown
+        default: return .gray
         }
     }
 }
