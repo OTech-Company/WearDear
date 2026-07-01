@@ -16,7 +16,7 @@ struct CartoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ProductsInfoView(productId: "8357262393388")
         }
     }
 }
