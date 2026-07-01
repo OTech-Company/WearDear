@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ProductInfo{
-    let id: String
+struct ProductInfo {
+    let id: Int
     let title: String
     let price: Double
     let discount: String
