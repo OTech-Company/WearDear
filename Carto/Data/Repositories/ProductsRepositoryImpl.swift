@@ -1,5 +1,5 @@
 //
-//  ProductsInfoRepositoryImpl.swift
+//  ProductsRepositoryImpl.swift
 //  Carto
 //
 //  Created by Manona on 29/06/2026.
@@ -16,9 +16,7 @@ class ProductsRepositoryImpl: ProductsRepository {
     }
 
     func getProductInfo(productId: String) async throws -> ProductInfo {
-
         let dto = try await remoteDataSource.getProductInfo(productId: productId)
-
         return dto.toDomain()
     }
 }
