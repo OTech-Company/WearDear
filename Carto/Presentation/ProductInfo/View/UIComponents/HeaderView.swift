@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HeaderView: View {
+    let title: String
+
     var body: some View {
         HStack {
             Button {} label: {
@@ -20,11 +22,9 @@ struct HeaderView: View {
                             .stroke(Color.gray.opacity(0.3), lineWidth: 1)
                     }
             }
-
             Spacer()
-            Text("Air Max 200 SE").bold()
+            Text(title).bold()
             Spacer()
-
             Button {} label: {
                 Image(systemName: "cart")
                     .foregroundColor(.black)
