@@ -21,6 +21,13 @@ final class ServiceLocator {
             return repo
         }
     
+    func resolveProductsRepository() -> ProductsRepository {
+            guard let repo = container?.productsRepository else {
+                fatalError("AppContainer not registered. Call ServiceLocator.shared.register() first.")
+            }
+            return repo
+        }
+    
 //    // MARK: - Resolvers — one per repository
 //    func resolveAuthRepository() -> AuthRepository {
 //        guard let repo = container?.authRepository else {
