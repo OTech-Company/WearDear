@@ -6,20 +6,26 @@
 //
 
 import SwiftUI
+import SwiftUI
 
 struct SwipeToAddView: View {
+    let price: Double
+    let discount: String
+
     @Binding var quantity: Int
     @State private var dragOffset: CGFloat = 0
+
     private let threshold: CGFloat = 60
 
     var body: some View {
         VStack(spacing: 0) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("$30.99")
+                    Text(String(format: "$%.2f", price))
                         .font(.title2)
                         .bold()
-                    Text("10% OFF")
+
+                    Text(discount)
                         .foregroundColor(.red)
                         .font(.caption)
                         .bold()
@@ -29,7 +35,9 @@ struct SwipeToAddView: View {
 
                 HStack(spacing: 16) {
                     Button {
-                        if quantity > 0 { quantity -= 1 }
+                        if quantity > 0 {
+                            quantity -= 1
+                        }
                     } label: {
                         Text("−")
                             .font(.title3)
@@ -67,26 +75,36 @@ struct SwipeToAddView: View {
             ZStack(alignment: .top) {
                 VStack(spacing: 2) {
                     Image(systemName: "chevron.up")
-                        .font(.title2).fontWeight(.semibold)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(.black)
+
                     Image(systemName: "chevron.up")
-                        .font(.title2).fontWeight(.semibold)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.4))
+
                     Image(systemName: "chevron.up")
-                        .font(.title2).fontWeight(.semibold)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.15))
                 }
                 .offset(y: -52)
 
                 VStack(spacing: 2) {
                     Image(systemName: "chevron.down")
-                        .font(.title2).fontWeight(.semibold)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.15))
+
                     Image(systemName: "chevron.down")
-                        .font(.title2).fontWeight(.semibold)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(.black.opacity(0.4))
+
                     Image(systemName: "chevron.down")
-                        .font(.title2).fontWeight(.semibold)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .foregroundColor(.black)
                 }
                 .offset(y: 52)
@@ -107,13 +125,17 @@ struct SwipeToAddView: View {
                             }
                             .onEnded { value in
                                 let impact = UIImpactFeedbackGenerator(style: .medium)
+
                                 if value.translation.height >= threshold {
                                     quantity += 1
                                     impact.impactOccurred()
                                 } else if value.translation.height <= -threshold {
-                                    if quantity > 0 { quantity -= 1 }
+                                    if quantity > 0 {
+                                        quantity -= 1
+                                    }
                                     impact.impactOccurred()
                                 }
+
                                 withAnimation(.spring()) {
                                     dragOffset = 0
                                 }
