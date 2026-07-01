@@ -17,6 +17,7 @@ final class DIContainer {
 
     let appViewModel: AppViewModel
 
+    let brandRemoteDataSource: BrandRemoteDataSourceProtocol
 
     private init() {
         authRepository = AuthenticationRepositoryImpl()
@@ -28,6 +29,8 @@ final class DIContainer {
         appViewModel = AppViewModel(
             repository: authRepository
         )
+        
+        brandRemoteDataSource = BrandRemoteDataSource()
     }
     func makeLoginViewModel(router: AuthRouter) -> AuthLoginViewModel {
         AuthLoginViewModel(
@@ -62,4 +65,16 @@ final class DIContainer {
             appViewModel: appViewModel
         )
     }
+    
+    func makeBrandsRepo() -> BrandsRepoProtocol {
+            BrandsRepoImpl(remoteDataSource: brandRemoteDataSource)
+        }
+    
+    func makeBrandsUseCase() -> BrandsUseCaseProtocol {
+            BrandsUseCase(repository: makeBrandsRepo())
+        }
+    
+    func makeHomeViewModel() -> HomeViewModel {
+            HomeViewModel(brandVM: HomeBrandsViewModel(useCase: makeBrandsUseCase()))
+        }
 }
