@@ -2,7 +2,7 @@
 //  ProductsInfoViewModel.swift
 //  Carto
 //
-//  Created by Osama Abdellatif on 30/06/2026.
+//  Created by Manona on 29/06/2026.
 //
 
 import Foundation
@@ -11,7 +11,6 @@ import Foundation
 final class ProductsInfoViewModel: ObservableObject {
 
     let product: ProductInfo
-
     @Published var quantity: Int = 0
     @Published var selectedSize: String = ""
     @Published var selectedColorIndex: Int = 0

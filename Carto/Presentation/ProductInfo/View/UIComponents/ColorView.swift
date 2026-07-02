@@ -24,6 +24,10 @@ struct ColorView: View {
                         .frame(width: 28, height: 28)
                         .overlay {
                             Circle()
+                                .stroke(borderColor(for: colorNames[index]), lineWidth: borderWidth(for: colorNames[index]))
+                        }
+                        .overlay {
+                            Circle()
                                 .stroke(
                                     selectedColorIndex == index ? Color.black : Color.clear,
                                     lineWidth: 2.5
@@ -33,6 +37,14 @@ struct ColorView: View {
                 }
             }
         }
+    }
+
+    private func borderColor(for name: String) -> Color {
+        name.lowercased() == "white" ? Color.black.opacity(0.5) : Color.gray.opacity(0.35)
+    }
+
+    private func borderWidth(for name: String) -> CGFloat {
+        name.lowercased() == "white" ? 1.5 : 1
     }
 
     private func colorFromName(_ name: String) -> Color {

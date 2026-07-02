@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct ProductInfo {
     let id: Int
     let title: String
     let price: Double
     let compareAtPrice: Double?
+    let description: String
     let imageURL: String
     let sizes: [String]
     let colors: [String]
@@ -30,7 +30,8 @@ extension ProductInfo {
         title: "Nike Air Max",
         price: 89.99,
         compareAtPrice: 129.99,
-        imageURL: "shoes",
+        description: "Lightweight running shoe with breathable mesh upper and responsive cushioning, built for everyday comfort and long-distance runs.",
+        imageURL: "https://cdn.shopify.com/example.png",
         sizes: ["S", "M", "L", "XL"],
         colors: ["black", "white", "red"]
     )

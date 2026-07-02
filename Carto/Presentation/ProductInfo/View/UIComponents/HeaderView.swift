@@ -11,7 +11,7 @@ struct HeaderView: View {
     let title: String
 
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Button {} label: {
                 Image(systemName: "arrow.left")
                     .foregroundColor(.black)
@@ -23,7 +23,12 @@ struct HeaderView: View {
                     }
             }
             Spacer()
-            Text(title).bold()
+            Text(title)
+                .font(.title2)
+                .bold()
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .frame(maxWidth: 150)
             Spacer()
             Button {} label: {
                 Image(systemName: "cart")

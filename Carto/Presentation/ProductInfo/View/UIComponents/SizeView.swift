@@ -1,10 +1,3 @@
-//
-//  SizeView.swift
-//  Carto
-//
-//  Created by Manona on 27/06/2026.
-//
-
 import SwiftUI
 
 struct SizeView: View {
@@ -27,8 +20,8 @@ struct SizeView: View {
                         .overlay {
                             RoundedRectangle(cornerRadius: 12)
                                 .stroke(
-                                    selectedSize == size ? Color.black : Color.gray.opacity(0.2),
-                                    lineWidth: selectedSize == size ? 2 : 1
+                                    selectedSize == size ? Color.black : Color.black.opacity(0.5),
+                                    lineWidth: selectedSize == size ? 2 : 1.5
                                 )
                         }
                         .cornerRadius(12)

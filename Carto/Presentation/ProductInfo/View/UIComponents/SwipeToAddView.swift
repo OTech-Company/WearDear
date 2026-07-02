@@ -14,8 +14,11 @@ struct SwipeToAddView: View {
 
     @Binding var quantity: Int
     @State private var dragOffset: CGFloat = 0
+    @State private var showAddedEffect = false
+    @State private var addedEffectOffset: CGFloat = 0
+    @State private var addedEffectOpacity: Double = 0
 
-    private let threshold: CGFloat = 60
+    private let threshold: CGFloat = 45
 
     var body: some View {
         VStack(spacing: 0) {
@@ -37,6 +40,7 @@ struct SwipeToAddView: View {
                     if let discountPercentage = discountPercentage {
                         Text("-\(discountPercentage)% OFF")
                             .foregroundColor(.red)
+                            .font(.subheadline)
                             .bold()
                     }
                 }
@@ -74,92 +78,123 @@ struct SwipeToAddView: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.bottom, 12)
 
             Text("Swipe down to add")
                 .font(.subheadline)
                 .bold()
                 .foregroundColor(.secondary)
-                .padding(.bottom, 8)
+                .padding(.bottom, 2)
+
+            VStack(spacing: 1) {
+                Image(systemName: "chevron.up")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.2))
+
+                Image(systemName: "chevron.up")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.4))
+
+                Image(systemName: "chevron.up")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.6))
+            }
+
+            Spacer(minLength: 6)
+
+            Circle()
+                .fill(Color.black)
+                .frame(width: 50, height: 50)
+                .overlay {
+                    Image(systemName: "bag")
+                        .foregroundColor(.white)
+                        .font(.title3)
+                }
+                .offset(y: dragOffset)
+                .gesture(
+                    DragGesture()
+                        .onChanged { value in
+                            dragOffset = max(-threshold - 10, min(value.translation.height, threshold + 10))
+                        }
+                        .onEnded { value in
+                            let impact = UIImpactFeedbackGenerator(style: .medium)
+
+                            if value.translation.height >= threshold {
+                                quantity += 1
+                                impact.impactOccurred()
+                                triggerAddedEffect()
+                            } else if value.translation.height <= -threshold {
+                                if quantity > 0 {
+                                    quantity -= 1
+                                }
+                                impact.impactOccurred()
+                            }
+
+                            withAnimation(.spring()) {
+                                dragOffset = 0
+                            }
+                        }
+                )
+                .animation(.interactiveSpring(), value: dragOffset)
+
+            Spacer(minLength: 6)
+
+            VStack(spacing: 1) {
+                Image(systemName: "chevron.down")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.6))
+
+                Image(systemName: "chevron.down")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.4))
+
+                Image(systemName: "chevron.down")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.2))
+            }
+            .padding(.bottom, 0)
 
             ZStack(alignment: .top) {
-                VStack(spacing: 2) {
-                    Image(systemName: "chevron.up")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
+                Image("bag")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: 200)
+                    .padding(.top, -30)
+                    .clipped()
 
-                    Image(systemName: "chevron.up")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black.opacity(0.4))
-
-                    Image(systemName: "chevron.up")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black.opacity(0.15))
+                if showAddedEffect {
+                    Text("+1")
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(Color.black)
+                        .clipShape(Capsule())
+                        .offset(y: addedEffectOffset)
+                        .opacity(addedEffectOpacity)
                 }
-                .offset(y: -52)
-
-                VStack(spacing: 2) {
-                    Image(systemName: "chevron.down")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black.opacity(0.15))
-
-                    Image(systemName: "chevron.down")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black.opacity(0.4))
-
-                    Image(systemName: "chevron.down")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
-                }
-                .offset(y: 52)
-
-                Circle()
-                    .fill(Color.black)
-                    .frame(width: 56, height: 56)
-                    .overlay {
-                        Image(systemName: "bag")
-                            .foregroundColor(.white)
-                            .font(.title3)
-                    }
-                    .offset(y: dragOffset)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                dragOffset = max(-threshold - 10, min(value.translation.height, threshold + 10))
-                            }
-                            .onEnded { value in
-                                let impact = UIImpactFeedbackGenerator(style: .medium)
-
-                                if value.translation.height >= threshold {
-                                    quantity += 1
-                                    impact.impactOccurred()
-                                } else if value.translation.height <= -threshold {
-                                    if quantity > 0 {
-                                        quantity -= 1
-                                    }
-                                    impact.impactOccurred()
-                                }
-
-                                withAnimation(.spring()) {
-                                    dragOffset = 0
-                                }
-                            }
-                    )
-                    .animation(.interactiveSpring(), value: dragOffset)
             }
-            .frame(height: 150)
+        }
+    }
 
-            Image("bag")
-                .resizable()
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
-                .padding(.top, -28)
+    private func triggerAddedEffect() {
+        showAddedEffect = true
+        addedEffectOffset = 20
+        addedEffectOpacity = 1
+
+        withAnimation(.easeOut(duration: 0.6)) {
+            addedEffectOffset = -30
+            addedEffectOpacity = 0
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+            showAddedEffect = false
         }
     }
 }
